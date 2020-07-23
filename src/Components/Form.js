@@ -1,22 +1,4 @@
 import React from "react"
-import * as yup from "yup"
-
-const formSchema = yup.object().shape({
-    email: yup
-        .string()
-        .email("Email must be valid")
-        .required("Email is required"),
-    firstname: yup  
-        .string()
-        .min(2, "First Name must be at least 2 characters"),
-     lastname: yup
-        .string()
-        .min(4, "Lastname must be at least 4 character")
-        .required("Last Name is required"),
-    tos: yup
-        .boolean()
-        .oneOf([true], "Must Accept Terms of Service")
-})
 
 
 export default function Form(props){
@@ -46,12 +28,12 @@ export default function Form(props){
       }
 
     return(
-        <form className='form-container' /* on submit function */ >
+        <form className='form-container' onSubmit={onSubmit}>
             <div className='form-submit'>
                 <h2>Add User</h2>
 
             <div className='errors'>
-                <div>{errors.fistname}</div>
+                <div>{errors.firstname}</div>
                 <div>{errors.lastname}</div>
                 <div>{errors.email}</div>
                 <div>{errors.password}</div>
