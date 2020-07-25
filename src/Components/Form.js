@@ -54,7 +54,7 @@ export default function Form(props){
                       type='text'
                     />
                 </label>
-                <label> LastName: &nbsp;
+                <label>LastName: &nbsp;
                     <input 
                         value={values.lastname}
                         onChange={onInputChange}
